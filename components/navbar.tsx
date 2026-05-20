@@ -23,33 +23,32 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-white/5 bg-[#080b12]/80 backdrop-blur-xl">
+    <nav className="sticky top-0 z-50 backdrop-blur-xl"
+      style={{ background: "rgba(5,8,22,0.8)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="max-w-5xl mx-auto px-4 flex items-center justify-between h-14">
         <div className="flex items-center gap-8">
-          <Link href="/dashboard" className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-indigo-500 flex items-center justify-center text-sm font-bold text-white">H</div>
-            <span className="text-white font-semibold tracking-tight">HealthTrack</span>
+          <Link href="/dashboard" className="flex items-center gap-2.5">
+            <div className="w-7 h-7 rounded-lg flex items-center justify-center text-sm font-bold text-white"
+              style={{ background: "linear-gradient(135deg, #22d3ee, #a855f7)" }}>H</div>
+            <span className="font-bold text-white tracking-tight">HealthTrack</span>
           </Link>
           <div className="flex items-center gap-1">
             {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
-                  pathname === link.href
-                    ? "bg-white/10 text-white"
-                    : "text-gray-500 hover:text-gray-300 hover:bg-white/5"
-                }`}
-              >
+              <Link key={link.href} href={link.href}
+                className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all"
+                style={pathname === link.href
+                  ? { background: "rgba(34,211,238,0.12)", color: "#22d3ee", border: "1px solid rgba(34,211,238,0.2)" }
+                  : { color: "rgba(156,163,175,1)", border: "1px solid transparent" }}>
                 {link.label}
               </Link>
             ))}
           </div>
         </div>
-        <button
-          onClick={handleSignOut}
-          className="text-xs text-gray-500 hover:text-gray-300 transition px-3 py-1.5 rounded-md hover:bg-white/5"
-        >
+        <button onClick={handleSignOut}
+          className="text-xs font-medium px-3 py-1.5 rounded-lg transition-all"
+          style={{ color: "#9ca3af" }}
+          onMouseEnter={e => { e.currentTarget.style.color = "#22d3ee"; e.currentTarget.style.background = "rgba(34,211,238,0.08)"; }}
+          onMouseLeave={e => { e.currentTarget.style.color = "#9ca3af"; e.currentTarget.style.background = "transparent"; }}>
           Sign out
         </button>
       </div>
