@@ -23,19 +23,22 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-gray-900 border-b border-gray-800">
-      <div className="max-w-5xl mx-auto px-4 flex items-center justify-between h-16">
-        <div className="flex items-center gap-6">
-          <span className="text-white font-bold text-lg">HealthTrack</span>
-          <div className="flex gap-1">
+    <nav className="sticky top-0 z-50 border-b border-white/5 bg-[#080b12]/80 backdrop-blur-xl">
+      <div className="max-w-5xl mx-auto px-4 flex items-center justify-between h-14">
+        <div className="flex items-center gap-8">
+          <Link href="/dashboard" className="flex items-center gap-2">
+            <div className="w-7 h-7 rounded-lg bg-indigo-500 flex items-center justify-center text-sm font-bold text-white">H</div>
+            <span className="text-white font-semibold tracking-tight">HealthTrack</span>
+          </Link>
+          <div className="flex items-center gap-1">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition ${
+                className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
                   pathname === link.href
-                    ? "bg-indigo-600 text-white"
-                    : "text-gray-400 hover:text-white hover:bg-gray-800"
+                    ? "bg-white/10 text-white"
+                    : "text-gray-500 hover:text-gray-300 hover:bg-white/5"
                 }`}
               >
                 {link.label}
@@ -45,7 +48,7 @@ export default function Navbar() {
         </div>
         <button
           onClick={handleSignOut}
-          className="text-sm text-gray-400 hover:text-white transition"
+          className="text-xs text-gray-500 hover:text-gray-300 transition px-3 py-1.5 rounded-md hover:bg-white/5"
         >
           Sign out
         </button>
