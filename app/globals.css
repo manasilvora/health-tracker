@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050816;
+  --background: #060d0d;
   --foreground: #ededed;
+  --accent-green: #22c55e;
+  --accent-teal: #14b8a6;
+  --accent-lime: #4ade80;
 }
 
 @theme inline {
@@ -19,26 +22,8 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #22d3ee, #a855f7);
+  background: linear-gradient(135deg, #4ade80, #14b8a6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-.glow-cyan {
-  box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
-}
-
-.glow-purple {
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
-}
-
-.card-border {
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.card-border:hover {
-  border-color: rgba(34, 211, 238, 0.25);
-  background: rgba(34, 211, 238, 0.04);
 }

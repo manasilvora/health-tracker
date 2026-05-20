@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HealthTrack",
+  title: "Cadence",
   description: "Track your macros, sleep, and workouts",
 };
 
